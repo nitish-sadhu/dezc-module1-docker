@@ -15,4 +15,6 @@ for filepath in current_dir.iterdir():
         content = filepath.read_text(encoding='utf-8')
         print(f"    content: {content}")
 
+    
+
         
