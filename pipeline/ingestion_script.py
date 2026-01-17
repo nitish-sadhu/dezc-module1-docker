@@ -5,16 +5,6 @@ import pandas as pd
 from tqdm.auto import tqdm
 from sqlalchemy import create_engine
 
-year=2021
-month=1
-
-pg_host='localhost'
-pg_port=5432
-pg_user='root'
-pg_password='root'
-pg_db='ny_taxi'
-
-chunksize=100000
 
 dtype = {
     "VendorID": "Int64",
@@ -47,6 +37,17 @@ engine = create_engine(f'postgresql://{pg_user}:{pg_password}@{pg_host}:{pg_port
 
 
 def run():
+
+    year=2021
+    month=1
+
+    pg_host='localhost'
+    pg_port=5432
+    pg_user='root'
+    pg_password='root'
+    pg_db='ny_taxi'
+
+    chunksize=100000
 
     df_iter = pd.read_csv(
         prefix + 'yellow_tripdata_2021-01.csv.gz',
